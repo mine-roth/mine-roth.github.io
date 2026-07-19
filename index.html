@@ -5,37 +5,12 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script 
-      src="https://n6wxm.com/vignette.min.js" 
-      data-zone="11338235" 
-      data-sdk="showAd">
-    </script>
+    <script>(function(s){s.dataset.zone='11338235',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
   </head>
   <body>
-    <button onclick="watchAd()">Click to watch Ad</button>
+    
     <strong>Test play</strong>
 
-    <script>
-      function watchAd() {
-        console.log("Clicked Ad Button");
-
-        // Check if the Monetag SDK global function is loaded
-        if (typeof showAd === "function") {
-          // Pass the proper format argument so Monetag knows what type to launch
-          showAd({ type: 'inApp' })
-            .then(() => {
-                console.log("Ad closed successfully. Resume game or action here.");
-                alert("success");
-            })
-            .catch((error) => {
-                console.log("Ad failed to load or user closed it early:", error);
-                alert("failed: " + error);
-            });
-        } else {
-          console.log("Monetag SDK is still loading or blocked by your browser.");
-          alert("SDK not ready yet");
-        }
-      }
-    </script>
+    Welcome to Ad tester
   </body>
 </html>
