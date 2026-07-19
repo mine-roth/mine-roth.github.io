@@ -15,9 +15,11 @@
         showAd()
           .then(() => {
               console.log("Ad closed successfully. Resume game or action here.");
+            alert("success");
           })
           .catch((error) => {
               console.log("Ad failed to load or user closed it early:", error);
+            alert("failed");
           });
        console.log("Clicked Ad");
       }
