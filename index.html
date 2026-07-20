@@ -5,7 +5,23 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script>(function(s){s.dataset.zone='11338235',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+    <button id="trigger-ad-btn">Click here to continue</button>
+
+<script>
+  let adLoaded = false;
+
+  document.getElementById('trigger-ad-btn').addEventListener('click', function() {
+    // Prevent the script from loading multiple times if they click again
+    if (adLoaded) return;
+    adLoaded = true;
+
+    // This is your exact Monetag snippet, wrapped to execute only on click
+    (function(s){
+      s.dataset.zone = '11338235';
+      s.src = 'https://n6wxm.com/vignette.min.js';
+    })([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')));
+  });
+</script>
   </head>
   <body>
     
