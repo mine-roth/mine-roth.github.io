@@ -4,27 +4,38 @@
     <meta name="monetag" content="6632d19823ab685bc21c684e053ca462">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script 
+      src="https://quge5.com/88/tag.min.js" 
+      data-zone="261749" 
+      data-sdk="showAd" 
+      async 
+      data-cfasync="false">
+    </script>
   </head>
   <body>
-    <button id="trigger-ad-btn">Click here to continue</button>
+    
+
+<button onclick="launchMyAd()">Watch Ad</button>
 
 <script>
-  let adLoaded = false;
-
-  document.getElementById('trigger-ad-btn').addEventListener('click', function() {
-    // Prevent the script from loading multiple times if they click again
-    if (adLoaded) return;
-    adLoaded = true;
-
-    // This is your exact Monetag snippet, wrapped to execute only on click
-    (function(s){
-      s.dataset.zone = '11338235';
-      s.src = 'https://n6wxm.com/vignette.min.js';
-    })([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')));
-  });
+  function launchMyAd() {
+    // Check if the Monetag SDK is ready and defined
+    if (typeof showAd === "function") {
+      showAd()
+        .then(() => {
+          console.log("Ad displayed and closed successfully.");
+        })
+        .catch((error) => {
+          console.error("Ad failed to show:", error);
+        });
+    } else {
+      console.log("Ad tag is still initializing...");
+    }
+  }
 </script>
-    <strong>Test play</strong>
+    <strong>Now using multitag</strong>
 
-    Welcome to Ad tester
+    Welcome to Ad tester.
+    Peter it may be internet connection
   </body>
 </html>
