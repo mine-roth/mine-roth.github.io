@@ -23,7 +23,7 @@ jobs:
           node-version: '20'
 
       - name: Run my script
-        run: node scripts/script.js  # Make sure this matches your actual script file name inside scripts/
+        run: node serverm.js  # Make sure this matches your actual script file name inside scripts/
 
       - name: Commit and push changes
         run: |
