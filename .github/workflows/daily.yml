@@ -23,7 +23,4 @@ jobs:
         run: npm install @supabase/supabase-js
 
       - name: Run my script
-        env:
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
         run: node serverm.js
