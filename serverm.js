@@ -1,30 +1,25 @@
-import { createClient } from '@supabase/supabase-js';
+const supabaseUrl = '"https://hqqykvvumlgoudkikmlx.supabase.co"';
+const supabaseKey = 'sb_publishable_WUK6FDzfwvMBMd50a4HHcw_VvV7uMDs';
 
-const supabaseUrl = "https://hqqykvvumlgoudkikmlx.supabase.co";
-const supabaseKey = "sb_publishable_WUK6FDzfwvMBMd50a4HHcw_VvV7uMDs";
+async function getFirstItem() {
+  try {
+    const response = await fetch(`${supabaseUrl}/rest/v1/update?select=*&limit=1`, {
+      headers: {
+        'apikey': supabaseKey,
+        'Authorization': `Bearer ${supabaseKey}`
+      }
+    });
 
-if (!supabaseUrl || !supabaseKey) {
-  console.error('Error: SUPABASE_URL or SUPABASE_KEY environment variable is missing.');
-  process.exit(1);
-}
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
 
-const supabase = createClient(supabaseUrl, supabaseKey);
-
-async function runTask() {
-  // Executes a real query to trigger PostgreSQL engine activity
-  const { data, error } = await supabase
-    .from('update')
-    .select('id')
-    .limit(1);
-
-  if (error) {
-    throw error;
+    const data = await response.json();
+    const firstItem = data[0] || null;
+    console.log('First item:', firstItem);
+  } catch (error) {
+    console.error('Error fetching data:', error.message);
   }
-
-  console.log('Successfully queried database:', data);
 }
 
-runTask().catch((err) => {
-  console.error('Network or script error:', err);
-  process.exit(1);
-});
+getFirstItem();
