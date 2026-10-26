@@ -1,0 +1,180 @@
+{
+    "asset" : {
+        "version" : "2.0",
+        "generator" : "Khronos glTF Blender I/O v1.2.20"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "nodes" : [
+                0
+            ],
+            "name" : "Scene"
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "defaultMaterial.004",
+            "scale" : [
+                0.734062135219574,
+                0.7340620756149292,
+                0.734062135219574
+            ],
+            "rotation" : [
+                -0.7202385663986206,
+                0.0012091087410226464,
+                -0.0018942789174616337,
+                0.6937228441238403
+            ]
+        }
+    ],
+    "materials" : [
+        {
+            "emissiveFactor" : [
+                1,
+                1,
+                1
+            ],
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "texCoord" : 0,
+                    "index" : 3
+                },
+                "metallicRoughnessTexture" : {
+                    "texCoord" : 0,
+                    "index" : 2
+                }
+            },
+            "occlusionTexture" : {
+                "texCoord" : 0,
+                "index" : 2
+            },
+            "emissiveTexture" : {
+                "texCoord" : 0,
+                "index" : 0
+            },
+            "normalTexture" : {
+                "texCoord" : 0,
+                "index" : 1
+            },
+            "name" : "Material5"
+        }
+    ],
+    "meshes" : [
+        {
+            "primitives" : [
+                {
+                    "indices" : 3,
+                    "material" : 0,
+                    "attributes" : {
+                        "TEXCOORD_0" : 0,
+                        "POSITION" : 1,
+                        "NORMAL" : 2
+                    }
+                }
+            ],
+            "name" : "defaultMaterial.004"
+        }
+    ],
+    "textures" : [
+        {
+            "source" : 0
+        },
+        {
+            "source" : 1
+        },
+        {
+            "source" : 2
+        },
+        {
+            "source" : 3
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "Material5_emissive",
+            "uri" : "ore-rex/Material5_emissive.jpg"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "Material5_normal",
+            "uri" : "ore-rex/Material5_normal.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "Material5_metallicRoughness",
+            "uri" : "ore-rex/Material5_metallicRoughness.png"
+        },
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "Material5_baseColor",
+            "uri" : "ore-rex/Material5_baseColor.jpg"
+        }
+    ],
+    "accessors" : [
+        {
+            "count" : 228,
+            "type" : "VEC2",
+            "bufferView" : 0,
+            "componentType" : 5126
+        },
+        {
+            "count" : 228,
+            "bufferView" : 1,
+            "type" : "VEC3",
+            "componentType" : 5126,
+            "min" : [
+                -2.598597526550293,
+                -2.217379570007324,
+                -0.3837246298789978
+            ],
+            "max" : [
+                2.0118913650512695,
+                2.920656204223633,
+                4.658392906188965
+            ]
+        },
+        {
+            "count" : 228,
+            "type" : "VEC3",
+            "bufferView" : 2,
+            "componentType" : 5126
+        },
+        {
+            "count" : 504,
+            "type" : "SCALAR",
+            "bufferView" : 3,
+            "componentType" : 5123
+        }
+    ],
+    "bufferViews" : [
+        {
+            "byteLength" : 1824,
+            "buffer" : 0,
+            "byteOffset" : 0
+        },
+        {
+            "byteLength" : 2736,
+            "buffer" : 0,
+            "byteOffset" : 1824
+        },
+        {
+            "byteLength" : 2736,
+            "buffer" : 0,
+            "byteOffset" : 4560
+        },
+        {
+            "byteLength" : 1008,
+            "buffer" : 0,
+            "byteOffset" : 7296
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 8304,
+            "uri" : "mr-Ore.bin"
+        }
+    ]
+}

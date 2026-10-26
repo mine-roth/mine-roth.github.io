@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trade</title>
+    <link rel="stylesheet" href="../../css/app.css">
+    <link rel="stylesheet" href="../../css/trade.css">
+    <script src="https://js.paystack.co/v2/inline.js"></script>
+</head>
+<body>
+  <button id="loc-helper" onclick="history.back()">&LeftArrow; Back</button>
+    <div class="bal">
+        <img src="../../res/icons/roth.png" width="20px">
+        <span id="roth">...</span>
+    </div>
+    <p id="ref" class="term"></p>
+    <canvas id="chart" width="300px"></canvas>
+    <p id="analyt" class="term">loading-market...</p>
+    <div class="pred">
+        <header>Predict level:</header>
+        <p>click HIGHER if the level will rise, or click LOWER if the level will drop. This will cost 1Roth</p>
+        <p style="text-align: center;">
+            <button class="grn-btn prd" disabled onclick="bid('high')">&UpperRightArrow; Higher</button>
+            <button class="red-btn prd" disabled onclick="bid('low')">&LowerLeftArrow; Lower</button>
+        </p>
+    </div>
+    <br>
+    <button class="cls" onclick="deposit()">Buy more Roth</button>
+    <br>
+    <br>
+    <script type="importmap">
+        {
+            "imports": {
+                "jquery": "../../scripts/jquery-4.module.js"
+            }
+        }
+    </script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>

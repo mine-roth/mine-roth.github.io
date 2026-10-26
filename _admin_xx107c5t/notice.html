@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MineRoth | Notification control</title>
+    <link rel="stylesheet" href="assets/admin.css">
+</head>
+<body>
+    <p style="text-align: center;">
+        <img src="../res/Icon.png" width="40px">
+    </p>
+    <p class="term">This is for Admins only.</p>
+    <p class="term" id="status">Loading...</p>
+    <div class="pred">Notification Board.</div>
+    <br>
+    <form id="notice" class="pred">
+        <p>Info-type:
+            <select style="margin-right: 40px;" class="inp" id="ntc-type" required>
+                <option value="info">info</option>
+                <option value="congrats">congrats</option>
+                <option value="newyear">newyear</option>
+                <option value="christmas">christmas</option>
+                <option value="warn">warn</option>
+                <option value="block">block</option>
+
+            </select>
+            Heading: <input type="text" id="head" class="inp" required>
+        </p>
+        <p>
+            <div class="inp" style="width: 91%; overflow: hidden scroll; height: 180px; margin: 0 3%;" id="mesg" spellcheck="false" contenteditable>
+            </div>
+        </p>
+        <p style="text-align: center;">
+            <button class="cls" onclick="addImage()" type="button">+ Image</button>
+            <button class="cls" onclick="addLink()" type="button">+ Link</button>
+            <button class="pred grn-btn" style="margin-left: 100px;">Save Update</button>
+        </p>
+    </form>
+    <script type="importmap">
+        {
+            "imports": {
+                "jquery": "../scripts/jquery-4.module.js"
+            }
+        }
+    </script>
+    <div id="secret"></div>
+    <script type="module" src="ma7uqi.js"></script>
+    <script type="module" src="assets/notice.js"></script>
+</body>
+</html>
