@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mine Roth | Log</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/log.css">
+    <link rel="shortcut icon" href="res/Icon.png">
+</head>
+<body>
+    <menu>
+        <div style="display: flex;" onclick="aboutMR()">
+            <img src="res/Icon.png" width="25px" style="margin-right: 5px;">
+            <h1>Mine Roth</h1>
+        </div>
+    </menu>
+    <main>
+        <div class="mid2">
+            <img src="./res/flag.png" width="50px">
+        </div>
+        <div class="mid2">
+            <strong>Nigerians-Only</strong>
+        </div>
+        <div class="mid2">
+            <form id="logger">
+                <label>Name</label>
+                <br>
+                <input type="text" id="name" minlength="9" placeholder="Full Name" required>
+                <br>
+                <div id="bank-in">
+                    <br>
+                    <label>Bank Name</label>
+                    <br>
+                    <input type="text" id="bname" minlength="3" placeholder="Your Bank Name" required>
+                    <br>
+                    <br>
+                    <label>Account Number</label>
+                    <br>
+                    <input type="number" id="bacct" placeholder="Bank Account Number" required>
+                </div>
+                <br>
+                <label>Password</label>
+                <br>
+                <input type="password" style="width: 70%;" minlength="4" maxlength="4" id="pw" placeholder="Set A Password" required>
+                <button type="button" onclick="togglePW()" 
+                    style="border-radius: 8px; filter: invert(1); border:none; background-color: white;">
+                    <img id="eye" src="res/icons/eye-open.png" width="20px">
+                </button>
+                <br>
+                <br>
+                <p style="text-align: center;">
+                    <button id="submit" type="submit" class="blue-btn"></button>
+                </p>
+            </form>
+        </div>
+        <br>
+        <footer>
+            <p style="margin: 4px;">Join Us on:</p>
+            <p class="WA"><img src="res/icons/whatsapp.png" width="20px"> Whatsapp</p>
+            <p class="FB"><img src="res/icons/faceb.png" width="20px"> Facbook</p>
+        </footer>
+    </main>
+    <div id="MR" show="false">
+        <div class="info">
+            <span onclick="closeMR()" style="
+                position: absolute; 
+                right: 10px; top: 5px; 
+                font-size: 20px; width: 30px; 
+                text-align: center;"
+            >&Cross;</span>
+            <h1 class="special-text">Mine Roth</h1>
+            <div style="display: flex;">
+                <img src="res/Icon.png" width="100px" height="100px" style="margin: 5px;">
+                <div>
+                    <p>
+                        This software (MineRoth) is made by <strong>MineRoth</strong>
+                        organization.
+                    </p>
+                </div>
+            </div>
+            <div>
+                <p><strong>The Founders</strong></p>
+                <p><i>Ayara Joshua</i> > The Developer</p>
+                <p><i>Amokonmusa Peter</i> > The Enterpreneur</p>
+            </div>
+        </div>
+    </div>
+    <script src="scripts/index.js"></script>
+    <script type="module" src="scripts/log.js"></script>
+</body>
+</html>

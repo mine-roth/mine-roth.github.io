@@ -1,0 +1,285 @@
+:root {
+    --bg: rgb(22, 22, 22);
+    --light: white;
+    --text: whitesmoke;
+    --sharp-gd: linear-gradient(90deg,blue,rgb(74, 0, 143),rgb(215, 95, 236));
+    --blue: rgb(78, 66, 245);
+    --blue-gd: linear-gradient(blue,rgb(1, 1, 167),rgb(174, 43, 226));
+    --mob-ui-outline: rgba(0, 0, 0, 0.377);
+    --header-fnt: ;
+    --ui-fnt: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    background-color: var(--bg);
+    margin: 0;
+    background-blend-mode: lighten;
+}
+
+* {
+    user-select: none;
+}
+
+button {
+    outline: transparent;
+}
+
+@font-face {
+    font-family: Agent;
+    src: url("../res/fonts/AGENT.TTF");
+}
+
+@font-face {
+    font-family: Algera;
+    src: url("../res/fonts/ALGERA.TTF");
+}
+
+@font-face {
+    font-family: Brush;
+    src: url("../res/fonts/BRUSH.TTF");
+}
+
+menu h1,.special-text {
+    color: transparent;
+    background-image: var(--sharp-gd);
+    -webkit-background-clip: text;
+    margin: 2px;
+    font-size: 16px;
+    font-family: var(--ui-fnt);
+}
+
+menu {
+    background-color: var(--light);
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.right-bar {
+    position: absolute;
+    right: 5px;
+}
+
+.blue-btn {
+    margin-left: 5px;
+    background-image: var(--blue-gd);
+    padding: 5px 10px;
+    border: 1px outset var(--mob-ui-outline);
+    font-family: var(--ui-fnt);
+    border-radius: 10px;
+    color: white;
+    transition: 0.5s;
+}
+
+main {
+    position: absolute;
+    top: 8%;
+    height: 92%;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#main {
+    position: absolute;
+    top: 8%;
+    height: 92%;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border: none;
+}
+
+.mid {
+    width: 100%;
+}
+
+#MR {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.685);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#MR[show="false"] {
+    visibility: hidden;
+}
+#MR[show="true"] {
+    visibility: visible;
+}
+
+#MR .info {
+    position: absolute;
+    font-family: var(--ui-fnt);
+    max-width: 500px;
+    padding: 10px;
+    background-color: var(--light);
+    width: 80%;
+    height: fit-content;
+    border-radius: 20px;
+    box-shadow: 2px 2px 8px 5px black;
+}
+
+p {
+    margin: 2px;
+    padding: 5px 10px;
+}
+
+.tit {
+    font-size: 20px;
+    font-family: Algera;
+    text-align: center;
+    color: var(--blue);
+    text-shadow: 2px 2px 5px black;
+}
+
+.ngn {
+    text-decoration-style: double;
+}
+
+.text {
+    color: var(--text);
+    text-align: center;
+    font-family: var(--ui-fnt);
+    font-style: italic;
+}
+
+.list {
+    color: silver;
+    text-align: left;
+    font-family: var(--ui-fnt);
+    font-style: italic;
+}
+
+.emphat {
+    font-family: Brush;
+    font-size: 40px;
+    color: var(--blue);
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.377);
+}
+.warn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.warn div{
+    font-family: monospace;
+    font-size: 15px;
+    background-color: rgba(0, 0, 0, 0.377);
+    width: 80%;
+    border: 1px solid yellow;
+    color: yellow;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.sticker {
+    animation-name: pump; 
+    animation-play-state: running;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+}
+
+.flashy-btn {
+    cursor: pointer;
+    font-family: var(--ui-fnt);
+    color: var(--light);
+    background-color: rgb(32, 32, 250);
+    border: none;
+    padding: 5px 30px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 3px 10px rgba(32, 32, 250, 0.061),
+                2px 2px 3px 5px rgba(0, 60, 255, 0.061);
+    transition: 0.5s;
+}
+
+.flashy-btn:active {
+    background-color: rgb(32, 145, 250);
+    transform: scale(1.3,1);
+}
+.blue-btn:active {
+    transform: scale(1.2,1.1);
+    background-image: linear-gradient(rgb(1, 1, 167),blue,rgb(174, 43, 226));
+}
+
+footer {
+    padding: 5px 3px;
+    margin-top: 20px;
+    background-image: linear-gradient(45deg,black 20%,rgb(0, 0, 85) 40%,black 40%);
+    width: 100%;
+    height: fit-content;
+    color: var(--light);
+    font-family: var(--ui-fnt);
+}
+
+@keyframes pump {
+    0% {
+        transform: scale(1.2,1.2);
+    }
+    50% {
+        transform: scale(1,1);
+    }
+    100% {
+        transform: scale(1.2,1.2);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner {
+   animation-name: spin;
+   animation-duration: 1s;
+   animation-iteration-count: infinite;
+   animation-play-state: running;
+}
+
+.WA {
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 20px;
+    width: 150px;
+    color: white;
+    text-shadow: 1px 2px 7px black;
+    background-color: rgb(74, 231, 1);
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+}
+.WA img,.FB img {
+    margin-right: 5px;
+} 
+.FB {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin: 5px;
+    border-radius: 20px;
+    width: 150px;
+    color: white;
+    text-shadow: 1px 2px 7px black;
+    background-color: rgb(10, 47, 255);
+    font-size: 13px;
+    transition: 0.3s;
+}
+.WA:active, .FB:active {
+    transform: scale(1.1,1.3);
+    filter: grayscale(1);
+}

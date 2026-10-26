@@ -1,0 +1,50 @@
+main {
+    background-color: rgb(226, 226, 226);
+    background-image: url("../res/bg.jpg");
+    background-size: 150px;
+   
+}
+
+#name {
+    text-transform: capitalize;
+}
+
+#logger {
+    border-radius: 20px;
+    max-width: 500px;
+    margin-top: 10px;
+    width: 80%;
+    background-color: rgb(17, 17, 17);
+    box-shadow: 0px 0px 1px 2px black,
+                1px 2px 7px 3px black;
+    padding: 10px;
+    color: whitesmoke;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#logger input {
+    width: 90%;
+    color: silver;
+    border-radius: 5px;
+    border: none;
+    background-color: black;
+    border-bottom: 2px solid silver;
+    outline: none;
+    padding: 3px 5px;
+    height: 18px;
+}
+
+#logger input:focus {
+    border-color: blueviolet;
+}
+
+.mid2 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+footer {
+    position: absolute;
+    bottom: 0;
+}

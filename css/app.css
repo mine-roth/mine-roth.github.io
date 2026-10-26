@@ -1,0 +1,301 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #050515;
+  color: #ffffff;
+  height: 100vh;
+}
+
+.help {
+  background-color: rgba(0, 0, 0, 0.472);
+  padding: 5px 15px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 255, 0.527);
+  transition: 0.5s;
+}
+
+.help p {
+  background-color: royalblue;
+  color: white;
+  border-radius: 10px;
+}
+
+.help:active {
+  transform: scale(1.2,1.2);
+}
+
+.app {
+    border: none;
+    background-color: transparent;
+    margin: 0;
+    transition: 0.5s;
+    border-radius: 10px;
+}
+
+.app label {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    text-shadow: 
+        -1px -1px 3px blue,
+        1px 1px 3px blueviolet;
+    text-transform: capitalize;
+    width: 100%;
+}
+
+.app:active {
+    background-color: rgba(0, 0, 0, 0.829);
+}
+
+.padd {
+    width: 100%;
+    height: 165px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#roth-val {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin: 2px;
+    padding: 0;
+    color: #ffffffbf;
+    text-shadow: none;
+    margin: 3px 0px;
+}
+
+
+
+#loc-helper {
+  background-color: darkblue;
+  position: absolute;
+  top: 0;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border: none;
+  padding: 8px 20px;
+  color: white;
+  right: 5px;
+  box-shadow: 1px 2px 7px 3px rgba(0, 0, 0, 0.164);
+  transition: 0.3s;
+}
+#loc-helper:active {
+  background-color: cadetblue;
+}
+
+
+#roth-bal {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    text-shadow: 0 0 1px black;
+    width: 90%;
+    height: 90%;
+    max-width: 500px;
+    background-color: rgba(0, 75, 227, 33%);
+    border-radius: 20px;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.308);
+}
+
+.out {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.out div {
+    background-color: rgba(0, 0, 0, 0.377);
+    border-radius: 7px;
+    width: 80%;
+    padding: 2px 10px;
+    margin-left: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.depo {
+    padding: 5px 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: #00003c;
+    box-shadow: inset -1px  -1px 5px 2px rgba(0, 0, 0, 0.308);
+    color: rgb(220, 220, 255);
+}
+.depo:active {
+    box-shadow: inset 1px 1px 2px 2px rgba(0, 0, 0, 0.308);
+    color: silver;
+    filter: brightness(110%);
+}
+
+.inst {
+   padding: 10px;
+}
+
+#instruct {
+    background-color: rgba(0, 0, 0, 0.308);
+    font-size: 14px;
+    color: royalblue;
+    border: 1px solid royalblue;
+    border-radius: 20px;
+}
+
+.drop-btn {
+    background-color: royalblue;
+    border: none;
+    padding: 4px 10px;
+    border-radius: 10px;
+    color: black;
+}
+.drop-btn:active {
+    background-color: skyblue;
+}
+
+
+.loader-overlay * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Full-screen Loader Overlay */
+  .loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, #00008b 0%, #030319 70%, #000000 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+
+  /* Outer Orbit Ring */
+  .mining-container {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .orbit-ring {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 3px solid transparent;
+    border-top-color: #8a2be2;
+    border-bottom-color: #0000ff;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.4);
+  }
+
+  /* Center Pickaxe Icon Construction */
+  .pickaxe-wrapper {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    animation: pulse-mine 1.2s ease-in-out infinite alternate;
+  }
+
+  .pickaxe-head {
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    width: 50px;
+    height: 12px;
+    border-radius: 50% 50% 0 0;
+    background: linear-gradient(90deg, #0000ff, #8a2be2);
+    transform: rotate(-45deg);
+    box-shadow: 0 0 10px #8a2be2;
+  }
+
+  .pickaxe-handle {
+    position: absolute;
+    top: 22px;
+    left: 28px;
+    width: 6px;
+    height: 40px;
+    background: #00008b;
+    border: 1px solid #8a2be2;
+    border-radius: 3px;
+    transform: rotate(-45deg);
+    transform-origin: top center;
+  }
+
+  /* Animated Spark Effects */
+  .spark {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: #0000ff;
+    border-radius: 50%;
+    opacity: 0;
+    box-shadow: 0 0 8px #8a2be2;
+  }
+
+  .spark-1 {
+    top: 20%;
+    left: 20%;
+    animation: flash-spark 1.2s ease-in-out infinite;
+  }
+
+  .spark-2 {
+    top: 20%;
+    right: 20%;
+    animation: flash-spark 1.2s ease-in-out 0.4s infinite;
+  }
+
+  /* Text & Progress Styling */
+  .loading-text {
+    margin-top: 30px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-shadow: 0 0 10px #0000ff;
+  }
+
+  .progress-bar-container {
+    width: 200px;
+    height: 6px;
+    background-color: #00008b;
+    border-radius: 3px;
+    margin-top: 15px;
+    overflow: hidden;
+    border: 1px solid rgba(138, 43, 226, 0.5);
+  }
+
+  .progress-bar {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #0000ff, #8a2be2);
+    box-shadow: 0 0 8px #8a2be2;
+    animation: fill-bar 3s ease-in-out infinite;
+  }
+
+  /* Keyframe Animations */
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  @keyframes pulse-mine {
+    0% { transform: rotate(0deg) scale(0.95); }
+    50% { transform: rotate(-15deg) scale(1.05); }
+    100% { transform: rotate(10deg) scale(0.95); }
+  }
+
+  @keyframes flash-spark {
+    0%, 100% { opacity: 0; transform: scale(0); }
+    50% { opacity: 1; transform: scale(1.8); }
+  }
+
+  @keyframes fill-bar {
+    0% { width: 0%; }
+    50% { width: 70%; }
+    100% { width: 100%; }
+  }
