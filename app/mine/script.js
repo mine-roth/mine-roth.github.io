@@ -2,6 +2,7 @@ import * as THREE from "three";
 import {SBServer} from "../../scripts/sb-server.module.js";
 import {GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader.js";
 import MySweet from "../../scripts/mySweet.js";
+// Final
 
 let width = window.innerWidth;
 let height = window.innerHeight;
@@ -77,6 +78,7 @@ window.addEventListener("focus",async()=> {
                 });
 
                 pend_roth = 0;
+                localStorage.setItem("pRoth",pend_roth);
             };
             // Display value
             const [{roth}] = await users_db.get(`id=eq.${uid}&select=roth`);
