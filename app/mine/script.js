@@ -82,7 +82,7 @@ window.addEventListener("focus",async()=> {
             const [{roth}] = await users_db.get(`id=eq.${uid}&select=roth`);
             document.getElementById("roth-disp").innerHTML=`Roth: ${roth} P ${pend_roth}`;
         } else {
-            MySweet.alert("Failed to produce a pending Roth!","You came back too early. At least wait after 1 minute.")
+            MySweet.toast("You came back too early. At least wait after 1 minute.")
             on_out = false;
         };
     }
