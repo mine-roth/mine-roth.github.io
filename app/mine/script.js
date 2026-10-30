@@ -2,7 +2,7 @@ import * as THREE from "three";
 import {SBServer} from "../../scripts/sb-server.module.js";
 import {GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader.js";
 import MySweet from "../../scripts/mySweet.js";
-// Final
+// Strict
 
 let width = window.innerWidth;
 let height = window.innerHeight;
@@ -71,7 +71,7 @@ window.addEventListener("focus",async()=> {
             on_out = false;
             MySweet.toast(`+1 P`);
 
-            if(pend_roth>9){
+            if(pend_roth>19){
                 const [prev] = await users_db.get(`id=eq.${uid}&select=roth`);
                 await users_db.patch(`id=eq.${uid}`,{
                     roth: prev.roth+1
