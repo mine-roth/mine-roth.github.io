@@ -2,7 +2,7 @@ import * as THREE from "three";
 import {SBServer} from "../../scripts/sb-server.module.js";
 import {GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader.js";
 import MySweet from "../../scripts/mySweet.js";
-// Strict
+// Coperate
 
 let width = window.innerWidth;
 let height = window.innerHeight;
@@ -71,7 +71,7 @@ window.addEventListener("focus",async()=> {
             on_out = false;
             MySweet.toast(`+1 P`);
 
-            if(pend_roth>19){
+            if(pend_roth>9){
                 const [prev] = await users_db.get(`id=eq.${uid}&select=roth`);
                 await users_db.patch(`id=eq.${uid}`,{
                     roth: prev.roth+1
@@ -84,7 +84,8 @@ window.addEventListener("focus",async()=> {
             const [{roth}] = await users_db.get(`id=eq.${uid}&select=roth`);
             document.getElementById("roth-disp").innerHTML=`Roth: ${roth} P ${pend_roth}`;
         } else {
-            MySweet.toast("You came back too early. At least wait after 1 minute.")
+            MySweet.toast("You came back too early (-1). At least wait after 1 minute.");
+            if(pend_roth) pend_roth--; // Deduction
             on_out = false;
         };
     }
