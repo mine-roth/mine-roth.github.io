@@ -88,6 +88,7 @@ function confirmDeposit(stk) {
         onSuccess: async (transc) => {
             const [{roth}] = await users_db.get('select=roth&id=eq.'+uid);
             await users_db.patch('id=eq.'+uid, {roth: roth + (multiplier-1) });
+            window.location.reload();
         },
         onCancel: () => {
             // Nothing
