@@ -84,6 +84,7 @@ function confirmDeposit(stk) {
         onSuccess: async (transc) => {
             const [{roth}] = await users_db.get('select=roth&id=eq.'+uid);
             await users_db.patch('id=eq.'+uid, {roth: roth + (multiplier-1)});
+            window.location.reload();
         },
         onCancel: () => {
           // Nothing
@@ -102,6 +103,9 @@ globalThis.gotoTrade = ()=>{
 };
 globalThis.gotoUpdates = ()=>{
     window.location.href = "../updates/index.html?uid="+uid;
+};
+globalThis.gotoInvest = ()=>{
+    window.location.href = "../invest/index.html?uid="+uid;
 };
 
 async function startUp() {
@@ -123,7 +127,7 @@ async function startUp() {
         const redBank = "<img src='../../res/icons/red-bank.png' width='30px' style='margin-right: 7px'>";
         MySweet.setTheme("danger");
         await MySweet.confirm(redBank+"Bank Error!","Dear User, We detected that you provided a invalid bank information. Please fix this or Mine-Roth will not pay your dues. Tips: Re-enter you bank details in the 'Settings'.")
-        users_db.patch(`id=eq.${uid}`, {bError: null})
+        users_db.patch(`id=eq.${uid}`, {bError: false})
     }
 
     // Payeout
