@@ -32,8 +32,8 @@ const deposit = $('#deposit');
 deposit.css('visibility','hidden');
 
 const genEmail = `investor${uid}@mineroth.com`;
+
 deposit.click(()=>{
-    //MySweet.setTheme("light");
     setTimeout(async () => {
         const amt = await MySweet.choose("Deposit:",{
             times2: "NGN"+rothVal*2+" for 1 Roth",
@@ -116,61 +116,57 @@ async function init() {
     await updateInvs();
 
     $('#ml-inv').click(async()=>{
-        const amt = parseInt(await MySweet.prompt('Enter Amount:','number of roths.'))||0;
-        if(amt>0) {
-            if(amt<=roth) {
-                await users_db.patch('id=eq.'+uid, {roth: roth-amt });
-                await investors.post({from: uid, NGN: (amt*rothVal), in: 'Military Lions'});
-                window.location.reload();
-            } else {
-                MySweet.toast('Insufficient Roths.');
-            }
+        const amt = parseInt(await MySweet.prompt('Enter Amount (NGN):','number in naira. (+ charges)'))||0;
+        if(amt>=1000) {
+            investNGN(amt,'Military Lions');
         } else {
             MySweet.toast('Cancelled.');
         }
     });
     $('#wt-inv').click(async()=>{
-        const amt = parseInt(await MySweet.prompt('Enter Amount:','number of roths.'))||0;
-        if(amt>0) {
-            if(amt<=roth) {
-                await users_db.patch('id=eq.'+uid, {roth: roth-amt });
-                await investors.post({from: uid, NGN: (amt*rothVal), in: 'Wonder Tigers'});
-                window.location.reload();
-            } else {
-                MySweet.toast('Insufficient Roths.');
-            }
+        const amt = parseInt(await MySweet.prompt('Enter Amount (NGN):','number in naira. (+ charges)'))||0;
+        if(amt>=1000) {
+            investNGN(amt,'Wonder Tigers');
         } else {
             MySweet.toast('Cancelled.');
         }
     })
     $('#cg-inv').click(async()=>{
-        const amt = parseInt(await MySweet.prompt('Enter Amount:','number of roths.'))||0;
-        if(amt>0) {
-            if(amt<=roth) {
-                await users_db.patch('id=eq.'+uid, {roth: roth-amt });
-                await investors.post({from: uid, NGN: (amt*rothVal), in: 'Conquerous Goats:'});
-                window.location.reload();
-            } else {
-                MySweet.toast('Insufficient Roths.');
-            }
+        const amt = parseInt(await MySweet.prompt('Enter Amount (NGN):','number in naira. (+ charges)'))||0;
+        if(amt>=1000) {
+            investNGN(amt,'Conquerous Goats');
         } else {
             MySweet.toast('Cancelled.');
         }
     })
     $('#gf-inv').click(async()=>{
-        const amt = parseInt(await MySweet.prompt('Enter Amount:','number of roths.'))||0;
-        if(amt>0) {
-            if(amt<=roth) {
-                await users_db.patch('id=eq.'+uid, {roth: roth-amt });
-                await investors.post({from: uid, NGN: (amt*rothVal), in: 'Great Fishes'});
-                window.location.reload();
-            } else {
-                MySweet.toast('Insufficient Roths.');
-            }
+        const amt = parseInt(await MySweet.prompt('Enter Amount (NGN):','number in naira. (+ charges)'))||0;
+        if(amt>=1000) {
+            investNGN(amt,'Great Fishes');
         } else {
             MySweet.toast('Cancelled.');
         }
     })
+}
+
+async function investNGN(amount,grp) {
+    if(amount && grp){
+        paystack.newTransaction({
+            key: 'pk_live_54a5056e953c30da8ff333ccc0ff528065070ddf', 
+            email: genEmail,
+            amount: (amount+(2*amount/100)+100) * 100,
+            currency: 'NGN',
+            channels: ["bank","card"],
+            
+            onSuccess: async (transc) => {
+                await investors.post({from: uid, NGN: amount, in: grp});
+                window.location.reload();
+            },
+            onCancel: () => {
+                // Nothing
+            }
+        })
+    };
 }
 
 async function updateInvs() {
